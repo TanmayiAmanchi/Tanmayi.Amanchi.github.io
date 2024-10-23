@@ -1,0 +1,20 @@
+---
+title: "Get to Know Me!"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+Hi Everyone! My name is Tanmayi Amanchi
+
+![](images/New York City copy.jpg)
+
+
+I am a Master of Public Health candidate at Columbia University in the Epidemiology Department with an Applied Biostatistics and Public Health Data Science certificate. My journey encompasses various roles, from healthcare settings to laboratory research, fueling my commitment to improving health outcomes. I am passionate about leveraging data and research to address complex challenges in public health. 
+
+I am actively seeking opportunities in epidemiology and public health that allow me to leverage my skills in data analysis, research, and policy implementation.
+
+If you'd like to learn more about my experience, visit [this page](about.html)
+
+

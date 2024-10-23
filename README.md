@@ -1,1 +1,1 @@
-# Tanmayi.Amanchi.github.io
+# TanmayiAmanchi.github.io
