@@ -11,22 +11,42 @@ library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(dplyr)
+library(rnoaa)
 ```
 
-```{r}
-data("nyc_airbnb")
+```{r, include=FALSE}
+data("rest_inspec")
 
-nyc_airbnb = 
-  nyc_airbnb |> 
-  mutate(rating = review_scores_location / 2) |>
-  select(
-    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) |>
-  filter(
-    !is.na(rating), 
-    neighbourhood_group == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500)
+rest_inspec |> 
+  group_by(boro, grade) |> 
+  summarize(n = n()) |> 
+  pivot_wider(names_from = grade, values_from = n)
 ```
+
+```{r, include=FALSE}
+rest_inspec =
+  rest_inspec |>
+  filter(grade %in% c("A", "B", "C"), boro != "Missing") |> 
+  mutate(boro = str_to_title(boro))
+```
+
+```{r, include=FALSE}
+rest_inspec |> 
+  filter(str_detect(dba, "Pizza")) |> 
+  group_by(boro, grade) |> 
+  summarize(n = n()) |> 
+  pivot_wider(names_from = grade, values_from = n)
+```
+
+```{r, include=FALSE}
+rest_inspec |> 
+  filter(str_detect(dba, "[Pp][Ii][Zz][Zz][Aa]")) |> 
+  group_by(boro, grade) |> 
+  summarize(n = n()) |> 
+  pivot_wider(names_from = grade, values_from = n)
+```
+
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -34,9 +54,14 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-nyc_airbnb |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
-  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
+plot_bar <- rest_inspec %>%
+  group_by(boro, grade) %>%
+  summarize(count = n()) %>%
+  plot_ly(x = ~boro, y = ~count, color = ~grade, type = 'bar', barmode = 'group') %>%
+  layout(title = 'Restaurant Inspections by Borough and Grade',
+         xaxis = list(title = 'Borough'),
+         yaxis = list(title = 'Count'))
+plot_bar
 ```
 
 Column {data-width=350}
@@ -45,19 +70,34 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-nyc_airbnb |>
-  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
-  plot_ly(
-    x = ~lat, y = ~long, type = "scatter", mode = "markers",
-    color = ~price, text = ~text_label, alpha = 0.5)
+plot_box <- rest_inspec %>%
+  plot_ly(x = ~grade, y = ~score, type = 'box') %>%
+  layout(title = 'Distribution of Inspection Scores by Grade',
+         xaxis = list(title = 'Grade'),
+         yaxis = list(title = 'Inspection Score'))
+plot_box
 ```
 
 ### Chart C
 
 ```{r}
-nyc_airbnb |> 
-  count(neighbourhood) |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+scatter_data <- rest_inspec %>%
+  filter(!is.na(score) & !is.na(violation_code)) %>%
+  group_by(camis, dba, boro, score) %>%
+  summarise(num_violations = n(), .groups = 'drop')  # Count the number of violations
+
+scatter_plot <- plot_ly(data = scatter_data, 
+                         x = ~score, 
+                         y = ~num_violations, 
+                         type = 'scatter', 
+                         mode = 'markers', 
+                         marker = list(size = 10, color = 'blue', opacity = 0.5),
+                         text = ~paste('Restaurant:', dba, '<br>Borough:', boro, '<br>Score:', score, '<br>Violations:', num_violations),
+                         hoverinfo = 'text') %>%
+  layout(title = 'Scatter Plot of Inspection Scores vs. Number of Violations',
+         xaxis = list(title = 'Inspection Score'),
+         yaxis = list(title = 'Number of Violations'))
+
+scatter_plot
 ```
 

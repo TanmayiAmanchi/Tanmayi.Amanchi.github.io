@@ -6,7 +6,7 @@ output:
     toc_float: true
 ---
 
-Hi Everyone! My name is Tanmayi Amanchi
+## Hi Everyone! My name is Tanmayi Amanchi
 
 ![](images/New York City copy.jpg)
 

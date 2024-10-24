@@ -10,7 +10,6 @@ output:
 
 - **WORK EXPERIENCE**
 
-
 <img src="images/msph_logo.jpeg" style="width:5%">
 Graduate Teaching Assistant - Quantitative Foundations
 
@@ -21,7 +20,6 @@ Aug 2024 - Present
 New York, United States
 
 As a Teaching Assistant for the Research Methods and Applications (ReMA) Quantitative Foundations, I supported the learning and development of students in the core areas of Epidemiology and Biostatistics. My responsibilities include conducting weekly office hours to address student questions and provide personalized guidance on course content. Additionally, I lead weekly lab sessions where students practice and apply the week's concepts, focusing on critical topics such as disease incidence and prevalence, study design, and hypothesis testing.
-
 
 <img src="images/jahf.jpeg" style="width:5%">
 Health and Aging Program Intern
@@ -34,7 +32,6 @@ New York, United States
 
 Supported the John A. Hartford Foundation's mission of improving the quality of care for older adults by assisting in developing and implementing key older adult programs. Conducted research on healthcare policies, collaborated with multidisciplinary teams, and supported grant management processes to contribute to the Foundation’s advocacy efforts. Additionally, engaged with community partners and healthcare organizations to foster collaborations and enhance project outreach.
 
-
 <img src="images/medely.jpeg" style="width:5%">
 Certified Nursing Assistant
 
@@ -46,7 +43,6 @@ San Francisco Bay AreaSan Francisco Bay Area
 
 Worked as a Certified Nursing Assistant (CNA) through various hospitals and healthcare facilities across the Bay Area that experience healthcare staffing shortages. My duties consisted of providing care to patients, assisting them in activities of daily living, routinely taking vitals, and serving as a conduit between patients, nurses, and doctors.
 
-
 <img src="images/scripps.jpeg" style="width:5%">
 Patient Care Assistant in Surgical Intensive Care 
 
@@ -57,7 +53,6 @@ Nov 2021 - Feb 2022
 San Diego, California
 
 Assisted patients with activities of daily living, performing vital signs, EKGs, and bladder ultrasounds. Played as a key member of the clinical care team in collecting data and ensuring the patient has a safe, organized environment. Also supported the unit with a variety of patient logistic, clerical, equipment/supply, and charge reconciliation duties.
-
 
 <img src="images/TUPE.jpeg" style="width:5%">
 Tobacco Used and Prevention Youth Advisory Board (TUPE) 
@@ -72,6 +67,7 @@ Researched current adolescent tobacco and alcohol use, as well as effective prev
 
 
 - **EDUCATION**
+
 
 <img src="images/msph_logo.jpeg" style="width:5%">
 Columbia University Mailman School of Public Health
@@ -88,7 +84,6 @@ University of California, San Diego
 
 Bachelor of Science - BS, Human Developmental Sciences Specialization in Healthy Aging, General Biology
 
-
 <img src="images/lpc.jpeg" style="width:5%">
 Las Positas College
 
@@ -97,7 +92,6 @@ Associate of Science - AS, Biology, General
 Jan 2017 - Aug 2020
 
 Middle College Program - Obtained a rigorous high school education while concurrently earning college credits
-
 
 <img src="images/dhs.jpeg" style="width:5%">
 Dublin High School
@@ -163,9 +157,4 @@ Feb 2021 - Jun 2021
 
 Provided oversight of patients after they receive the COVID-19 vaccine and escalate any adverse reactions to the appropriate medical staff. Assisted with delivering equipment, supplies, and other items to medical staff as needed
 
-
-
-
 [Click Here to take you home](index.html)
-
-
